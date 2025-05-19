@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aleksandr & Nela — Wedding Invitation</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&family=Open+Sans&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('https://static.alltime.ru/obj/article/image-blog/Samyye_dorogiye_svadby/Samyye_dorogiye_svadby_1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #7a6248;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 60px;
+      margin: 0;
+      color: #b89e7b;
+      animation: fadeIn 2s ease-in;
+    }
+
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      margin: 0;
+      color: #b89e7b;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    .details {
+      margin-top: 30px;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+    }
+
+    .rsvp-button {
+      display: inline-block;
+      padding: 14px 30px;
+      margin-top: 40px;
+      background-color: #b89e7b;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .rsvp-button:hover {
+      background-color: #a78d6c;
+    }
+
+    .language-selector {
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="language-selector">
+      <label for="lang-select">Language:</label>
+      <select id="lang-select">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="sr">Srpski</option>
+      </select>
+    </div>
+
+    <h1 id="name1">Nela</h1>
+    <h2 id="and-text">and</h2>
+    <h1 id="name2">Aleksandr</h1>
+    <p id="invite-text">with full hearts, joyfully invite you to their wedding</p>
+
+    <div class="details">
+      <p id="date"><strong>Saturday, August 23, 2025</strong></p>
+      <p id="time1">Guests arrive at 17:00</p>
+      <p id="time2">Ceremony at 18:00</p>
+      <p id="location1">National Restaurant Carević.</p>
+      <p id="location2">7QR4+J72, Krimovica, Montenegro.</p>
+      <p id="reception"><em>Reception to follow</em></p>
+    </div>
+
+    <a id="rsvp-button" class="rsvp-button"
+      href="https://docs.google.com/forms/d/1gHjWRuVuJpQrbbQbDHGvBCjGQPIlAhAG1VY2iVLX-qY"
+      target="_blank">Registration</a>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        name1: 'Nela',
+        andText: 'and',
+        name2: 'Aleksandr',
+        inviteText: 'with full hearts, joyfully invite you to their wedding',
+        date: 'Saturday, August 23, 2025',
+        time1: 'Guests arrive at 17:00',
+        time2: 'Ceremony at 18:00',
+        location1: 'National Restaurant Carević.',
+        location2: '7QR4+J72, Krimovica, Montenegro.',
+        reception: 'Reception to follow',
+        rsvp: 'Registration',
+        langLabel: 'Language:'
+      },
+      ru: {
+        name1: 'Нела',
+        andText: 'и',
+        name2: 'Александр',
+        inviteText: 'с полными сердцами с радостью приглашают вас на свою свадьбу',
+        date: 'Суббота, 23 августа 2025',
+        time1: 'Гости приходят в 17:00',
+        time2: 'Церемония в 18:00',
+        location1: 'Национальный ресторан Царевич.',
+        location2: '7QR4+J72, Кримовица, Черногория.',
+        reception: 'Приём гостей после церемонии',
+        rsvp: 'Регистрация',
+        langLabel: 'Язык:'
+      },
+      sr: {
+        name1: 'Nela',
+        andText: 'i',
+        name2: 'Aleksandar',
+        inviteText: 'sa punim srcima, radosno vas pozivaju na svoje venčanje',
+        date: 'Subota, 23. avgust 2025.',
+        time1: 'Gosti dolaze u 17:00',
+        time2: 'Ceremonija u 18:00',
+        location1: 'Nacionalni restoran Carević.',
+        location2: '7QR4+J72, Krimovica, Crna Gora.',
+        reception: 'Prijem posle venčanja',
+        rsvp: 'Prijava',
+        langLabel: 'Jezik:'
+      }
+    };
+
+    const elements = {
+      name1: document.getElementById('name1'),
+      andText: document.getElementById('and-text'),
+      name2: document.getElementById('name2'),
+      inviteText: document.getElementById('invite-text'),
+      date: document.getElementById('date'),
+      time1: document.getElementById('time1'),
+      time2: document.getElementById('time2'),
+      location1: document.getElementById('location1'),
+      location2: document.getElementById('location2'),
+      reception: document.getElementById('reception'),
+      rsvpButton: document.getElementById('rsvp-button'),
+      langLabel: document.querySelector('label[for="lang-select"]')
+    };
+
+    const langSelect = document.getElementById('lang-select');
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+
+      elements.name1.textContent = t.name1;
+      elements.andText.textContent = t.andText;
+      elements.name2.textContent = t.name2;
+      elements.inviteText.textContent = t.inviteText;
+      elements.date.innerHTML = `<strong>${t.date}</strong>`;
+      elements.time1.textContent = t.time1;
+      elements.time2.textContent = t.time2;
+      elements.location1.textContent = t.location1;
+      elements.location2.textContent = t.location2;
+      elements.reception.textContent = t.reception;
+      elements.rsvpButton.textContent = t.rsvp;
+      elements.langLabel.textContent = t.langLabel;
+    }
+
+    setLanguage('en');
+
+    langSelect.addEventListener('change', (e) => {
+      setLanguage(e.target.value);
+    });
+  </script>
+</body>
+
+</html>
